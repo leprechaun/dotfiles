@@ -1,0 +1,101 @@
+set nocompatible
+filetype off
+syntax on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'vimwiki/vimwiki'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ap/vim-css-color'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ciaranm/detectindent'
+
+call vundle#end() 
+
+
+
+" Sane default indentation
+filetype plugin indent on
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" autocmd BufEnter *.{py,php} highlight OverLength ctermbg=darkgrey guibg=#592929
+" autocmd BufEnter *.{py,php} match OverLength /\%79v.*/
+
+autocmd BufEnter *.rb set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.rake set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.sh set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.json set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.py set ai sw=4 ts=4
+
+set laststatus=2
+
+au FileType haskell,vhdl,ada,sql let b:comment_leader = '-- '
+au FileType vim let b:comment_leader = '" '
+au FileType c,cpp,java,php,javascript let b:comment_leader = '// '
+au FileType sh,make,python let b:comment_leader = '# '
+au FileType tex let b:comment_leader = '% '
+
+
+
+" ,c and ,u will toggle line comments
+noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
+noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
+
+
+" Toggle NerdTREE
+map <F9> :NERDTreeToggle <CR>
+
+color zenburn
+
+set number
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list = 1
+
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '!'
+
+let g:multi_cursor_exit_from_insert_mode = 0
+
+xmap m     <Plug>(expand_region_expand)
+xmap <m-m> <Plug>(expand_region_shrink)
+
+" set background=dark
+set lazyredraw
+set cursorline
+
+
+set hlsearch
+
+let &colorcolumn=join(range(81,200),",")
+
+
+
+" These might break outside of my own runtime
+let g:airline_powerline_fonts = 1
+set term=screen-256color
+set directory=~/.vim/tmp
+set ttyfast
+set hidden
+
+set list lcs=trail:·,tab:>·

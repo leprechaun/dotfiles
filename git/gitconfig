@@ -1,0 +1,51 @@
+[core]
+	excludesfile = /home/leprechaun/.dotfiles/git/gitignore
+
+[user]
+	name = Laurence MacGuire
+	email = leprechaun@gmail.com
+
+[pager]
+	diff =
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+
+[color "branch"]
+	current = "yellow reverse"
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = "yellow bold"
+	frag = "magenta bold"
+	old = "red bold"
+	new = "green bold"
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[tig]
+	author-width = 10       # Set width of the author column
+	line-graphics = no      # Disable graphics characters
+	tab-size = 8            # Number of spaces per tab
+	show-refs = yes
+	show-rev-graph = yes
+
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	tree = "forest --pretty=format:\"%C(red)%h %C(magenta)(%ar) %C(blue)%an %C(reset)%s\" --style=15 --reverse"
+
+[push]
+	default = simple
+
+[credential]
+	helper = gnomekeyring

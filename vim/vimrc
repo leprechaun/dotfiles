@@ -62,6 +62,7 @@ map <F9> :NERDTreeToggle <CR>
 color zenburn
 
 set number
+" set relativenumber
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -99,3 +100,4 @@ set ttyfast
 set hidden
 
 set list lcs=trail:·,tab:>·
+set clipboard+=unnamed

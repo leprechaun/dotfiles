@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /home/leprechaun/.dotfiles/git/gitignore
+	excludesfile = ~/.dotfiles/git/gitignore
 
 [user]
 	name = Laurence MacGuire
@@ -32,11 +32,8 @@
 	untracked = cyan
 
 [tig]
-	author-width = 10       # Set width of the author column
 	line-graphics = no      # Disable graphics characters
 	tab-size = 8            # Number of spaces per tab
-	show-refs = yes
-	show-rev-graph = yes
 
 [alias]
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short

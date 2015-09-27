@@ -21,8 +21,17 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ciaranm/detectindent'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'mattn/flappyvird-vim'
 
 call vundle#end() 
+
+
+
+color zenburn
+set background=dark
+let g:solarized_termcolors=256
 
 
 
@@ -59,10 +68,7 @@ noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>/
 " Toggle NerdTREE
 map <F9> :NERDTreeToggle <CR>
 
-color zenburn
-
 set number
-" set relativenumber
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -81,7 +87,6 @@ let g:multi_cursor_exit_from_insert_mode = 0
 xmap m     <Plug>(expand_region_expand)
 xmap <m-m> <Plug>(expand_region_shrink)
 
-" set background=dark
 set lazyredraw
 set cursorline
 
@@ -101,3 +106,25 @@ set hidden
 
 set list lcs=trail:·,tab:>·
 set clipboard+=unnamed
+
+
+
+" unicode symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '߂'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+

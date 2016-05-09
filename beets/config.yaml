@@ -1,0 +1,14 @@
+plugins: web bpd discogs chroma ftintitle missing fetchart importadded mpd
+import:
+    move: yes
+    write: yes
+
+directory: ~/Music-Beets
+library: ~/.config/beets/library.db
+chroma:
+    auto: no
+
+bpd:
+    host: 127.0.0.1
+    port: 6601
+    volume: 100

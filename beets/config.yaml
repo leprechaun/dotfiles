@@ -1,4 +1,4 @@
-plugins: web bpd discogs chroma ftintitle missing fetchart importadded mpd
+plugins: web bpd discogs chroma ftintitle missing fetchart importadded info types edit smartplaylist
 import:
     move: yes
     write: yes
@@ -8,7 +8,15 @@ library: ~/.config/beets/library.db
 chroma:
     auto: no
 
-bpd:
-    host: 127.0.0.1
-    port: 6601
-    volume: 100
+types:
+    rating: int
+
+smartplaylist:
+    relative_to: /home/leprechaun/Music-Beets/
+    playlist_dir: ~/.config/beets/playlists/
+    playlists:
+        - name: funk.m3u
+          query: funk
+
+        - name: recently-added.m3u
+          query: added:2016-05-15.. added-

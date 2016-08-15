@@ -1,4 +1,4 @@
-plugins: web bpd discogs chroma ftintitle missing fetchart importadded info types edit smartplaylist
+plugins: bpd discogs chroma ftintitle missing fetchart importadded info types edit smartplaylist
 import:
     move: yes
     write: yes

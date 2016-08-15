@@ -7,36 +7,43 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'vimwiki/vimwiki'
+
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'kien/ctrlp.vim'
 Plugin 'msanders/snipmate.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vimwiki/vimwiki'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'ap/vim-css-color'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ciaranm/detectindent'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'mattn/flappyvird-vim'
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'ciaranm/detectindent'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'ap/vim-css-color'
+
+Plugin 'junegunn/seoul256.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'ajh17/Spacegray.vim'
 
 call vundle#end() 
 
 
 
-color zenburn
+color seoul256
 set background=dark
 let g:solarized_termcolors=256
 
 
 
-" Sane default indentation
-filetype plugin indent on
+" Sane default indentation filetype plugin indent on
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -44,10 +51,13 @@ set shiftwidth=4
 " autocmd BufEnter *.{py,php} highlight OverLength ctermbg=darkgrey guibg=#592929
 " autocmd BufEnter *.{py,php} match OverLength /\%79v.*/
 
-autocmd BufEnter *.rb set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.rb set ai tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd BufEnter *.rake set ai tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.sh set ai tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.json set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.js set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.yml set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.yaml set ai tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.py set ai sw=4 ts=4
 
 set laststatus=2
@@ -90,10 +100,13 @@ xmap <m-m> <Plug>(expand_region_shrink)
 set lazyredraw
 set cursorline
 
+set t_Co=256
+
 
 set hlsearch
 
-let &colorcolumn=join(range(81,200),",")
+highlight ColorColumn ctermbg=8
+set colorcolumn=80
 
 
 

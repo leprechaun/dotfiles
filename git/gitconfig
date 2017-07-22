@@ -46,3 +46,5 @@
 
 [credential]
 	helper = gnomekeyring
+[diff]
+	tool = vimdiff

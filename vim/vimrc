@@ -7,33 +7,55 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'vimwiki/vimwiki'
+	Plugin 'sheerun/vim-polyglot'
+"	Plugin 'vim-utils/vim-ruby-fold'
+	
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'kien/ctrlp.vim'
-Plugin 'msanders/snipmate.vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'majutsushi/tagbar'
+	Plugin 'bling/vim-airline'
+	Plugin 'nathanaelkane/vim-indent-guides'
+
+	Plugin 'kien/ctrlp.vim'
+
+	Plugin 'terryma/vim-expand-region'
+	Plugin 'terryma/vim-multiple-cursors'
+
+	Plugin 'Xuyuanp/nerdtree-git-plugin'
+	Plugin 'tpope/vim-fugitive'
+	Plugin 'airblade/vim-gitgutter'
+
+	Plugin 'msanders/snipmate.vim'
+
+	Plugin 'vimwiki/vimwiki'
+	Plugin 'plasticboy/vim-markdown'
+
+	Plugin 'ciaranm/detectindent'
+
+	Plugin 'ap/vim-css-color'
+
+	Plugin 'junegunn/seoul256.vim'
+"	Plugin 'flazz/vim-colorschemes'
+	Plugin 'ajh17/Spacegray.vim'
+	Plugin 'bluz71/vim-moonfly-colors'
+	Plugin 'ajmwagar/vim-dues'
+
+
+"	Plugin 'scrooloose/syntastic'
+" Plugin 'derekwyatt/vim-scala'
+" Plugin 'vim-ruby/vim-ruby'
+
+
+" Plugin 'editorconfig/editorconfig-vim'
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'terryma/vim-expand-region'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-ruby/vim-ruby'
-
-Plugin 'ciaranm/detectindent'
-Plugin 'nathanaelkane/vim-indent-guides'
-
-Plugin 'ap/vim-css-color'
-
-Plugin 'junegunn/seoul256.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ajh17/Spacegray.vim'
 
 call vundle#end() 
+
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
 
 
 
@@ -56,8 +78,8 @@ autocmd BufEnter *.rake set ai tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.sh set ai tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.json set ai tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.js set ai tabstop=2 softtabstop=2 shiftwidth=2
-autocmd BufEnter *.yml set ai tabstop=2 softtabstop=2 shiftwidth=2
-autocmd BufEnter *.yaml set ai tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufEnter *.yml set ai tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd BufEnter *.yaml set ai tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd BufEnter *.py set ai sw=4 ts=4
 
 set laststatus=2
@@ -77,17 +99,18 @@ noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>/
 
 " Toggle NerdTREE
 map <F9> :NERDTreeToggle <CR>
+nmap <F8> :TagbarToggle<CR>
 
 set number
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
@@ -117,7 +140,7 @@ set directory=~/.vim/tmp
 set ttyfast
 set hidden
 
-set list lcs=trail:·,tab:>·
+set list listchars=trail:·,precedes:«,extends:»,tab:·\ 
 set clipboard+=unnamed
 
 
@@ -131,13 +154,35 @@ let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '߂'
+"let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+
+
+
+
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
 

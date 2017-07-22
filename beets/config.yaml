@@ -1,4 +1,4 @@
-plugins: bpd discogs chroma ftintitle missing fetchart importadded info types edit smartplaylist
+plugins: bpd discogs chroma ftintitle missing fetchart importadded info types edit smartplaylist fuzzy beatport
 import:
     move: yes
     write: yes
@@ -12,8 +12,8 @@ types:
     rating: int
 
 smartplaylist:
-    relative_to: /home/leprechaun/Music-Beets/
-    playlist_dir: ~/.config/beets/playlists/
+    relative_to: beets:/
+    playlist_dir: /var/lib/mopidy/local/playlists/
     playlists:
         - name: funk.m3u
           query: funk

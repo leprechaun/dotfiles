@@ -4,12 +4,13 @@ source /etc/bash_completion.d/git-prompt
 # MY OWN PATH
 PATH=$PATH:/home/leprechaun/.bin/
 
-
 # GIT PROMPT
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
-PS1='\u@\h$(__git_ps1 " [\[\033[01;32m\]%s\[\033[00m\]]"):\w$ '
-PS1='[\W\[$(tput sgr0)$(__git_ps1 "@\033[01;32m\]%s\033[00m")] \\$ '
+#PS1='\u@\h$(__git_ps1 " [\[\033[01;32m\]%s\[\033[00m\]]"):\w$ '
+#PS1='[\W\[$(tput sgr0)$(__git_ps1 "@\033[01;32m\]%s\033[00m")] \\$ '
+
+PS1='[\W\[$(tput sgr0)$(__git_ps1 "@\033[01;32m%s\033[0m")\]] \\$ '
 
 
 # Terminal stuffs
@@ -26,8 +27,10 @@ export EDITOR=vim
 complete -C aws_completer aws
 source ~/.dotfiles/tmux/tmux-completion.sh
 
-source /home/leprechaun/.dotfiles/shells/rea-saml-aws.sh
-
 alias uzbl=uzbl-tabbed
 
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod noma' -\""
+
+# set -o vi
+
+#alias ^L=clear

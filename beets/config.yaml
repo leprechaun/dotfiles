@@ -1,22 +1,54 @@
-plugins: bpd discogs chroma ftintitle missing fetchart importadded info types edit smartplaylist fuzzy beatport
+plugins: bpd ftintitle duplicates missing fetchart importadded info types edit smartplaylist fuzzy
 import:
-    move: yes
-    write: yes
+  move: yes
+  write: yes
 
-directory: ~/Music-Beets
+directory: ~/Music
 library: ~/.config/beets/library.db
 chroma:
-    auto: no
+  auto: no
 
 types:
-    rating: int
+  rating: int
+
+paths:
+  default: "%ifdef{dirty,dirty/,clean/}$albumartist/$album%aunique{}/$track $title"
 
 smartplaylist:
-    relative_to: beets:/
-    playlist_dir: /var/lib/mopidy/local/playlists/
-    playlists:
-        - name: funk.m3u
-          query: funk
+  relative_to: /home/leprechaun/Music/
+  urlencode: yes
+  playlist_dir: ~/.local/share/mopidy/m3u/
+  prefix: "local:track:"
+  playlists:
+    - name: funk-60s.m3u
+      query:
+        - "funk year:1960..1969"
+    - name: funk-70s.m3u
+      query:
+        - "funk year:1970..1979"
+    - name: funk-80s.m3u
+      query:
+        - "funk year:1980..1989"
+    - name: funk-90s.m3u
+      query:
+        - "funk year:1990..1999"
+    - name: funk-00s.m3u
+      query:
+        - "funk year:2000..2090"
+    - name: funk-10s.m3u
+      query:
+        - "funk year:2010..2019"
 
-        - name: recently-added.m3u
-          query: added:2016-05-15.. added-
+    - name: jazz.m3u
+      query:
+        - "jazz"
+
+    - name: sampled.m3u
+      query:
+        - samplee
+    - name: samplee.m3u
+      query:
+        - sampled
+
+    - name: recently-added.m3u
+      query: added:2016-05-15..2022-12-12

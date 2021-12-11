@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.vimrc: vim/vimrc
+    ~/.vim/coc-settings.json: vim/coc-settings.json
+    ~/.gitconfig: git/gitconfig
+    ~/.editorconfig: editorconfig/editorconfig.conf
+    ~/.ncmpcpp/config:
+        path: ncmpcpp/config
+        create: true
+
+- create:
+  - ~/.vim/tmp/

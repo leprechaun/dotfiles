@@ -1,0 +1,16 @@
+{
+  "yaml.schemas": {
+    "Kubernetes": "helm-charts/*/templates/*"
+  },
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck",
+    "yaml": [ "yamllint" ]
+  },
+
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaJRE-17",
+      "path": "/usr/lib/jvm/java-17-openjdk-amd64"
+    }
+  ]
+}

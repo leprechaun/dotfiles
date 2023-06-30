@@ -43,8 +43,8 @@
 [push]
     default = simple
 
-[credential]
-    helper = gnomekeyring
+#[credential]
+#    helper = gnomekeyring
 
 [diff]
     tool = vimdiff

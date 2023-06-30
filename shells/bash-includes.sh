@@ -15,10 +15,15 @@ export EDITOR=vim
 complete -C aws_completer aws
 source ~/.dotfiles/tmux/tmux-completion.sh
 
-source "$HOME/.cargo/env"
+if [ -f ~/.cargo/env ]; then
+  . ~/.cargo/env
+fi
+
 export HUSKY_SKIP_HOOKS="true"
 
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export PROMPT_COMMAND='__git_ps1 "\[\033[38;5;248m\]\w" " \\\$ "'
+
+export PATH=$PATH:~/.local/bin/

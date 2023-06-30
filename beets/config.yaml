@@ -1,9 +1,13 @@
-plugins: bpd ftintitle duplicates missing fetchart importadded info types edit smartplaylist fuzzy
+plugins: bpd ftintitle duplicates missing fetchart importadded info types edit smartplaylist fuzzy scrub inline
 import:
   move: yes
   write: yes
+  set_fields:
+    grouping: uncategorised
 
-directory: ~/Music
+format_item: "$grouping/$albumtype: $albumartist/$artist - ($original_year - $disc/$disctotal) $album - ($track/$tracktotal) $title ($bitrate)"
+
+directory: ~/Music/beets/
 library: ~/.config/beets/library.db
 chroma:
   auto: no
@@ -12,7 +16,8 @@ types:
   rating: int
 
 paths:
-  default: "%ifdef{dirty,dirty/,clean/}$albumartist/$album%aunique{}/$track $title"
+  default: "$grouping/$albumartist/$album%aunique{}/$track $title"
+  comp: "$grouping/Compilations/$album%aunique{}/$track $title"
 
 smartplaylist:
   relative_to: /home/leprechaun/Music/
@@ -39,6 +44,19 @@ smartplaylist:
       query:
         - "funk year:2010..2019"
 
+    - name: hiphop-80s.m3u
+      query:
+        - "hiphop year:1980..1989"
+    - name: hiphop-90s.m3u
+      query:
+        - "hiphop year:1990..1999"
+    - name: hiphop-00s.m3u
+      query:
+        - "hiphop year:2000..2090"
+    - name: hiphop-10s.m3u
+      query:
+        - "hiphop year:2010..2019"
+
     - name: jazz.m3u
       query:
         - "jazz"
@@ -51,4 +69,10 @@ smartplaylist:
         - sampled
 
     - name: recently-added.m3u
-      query: added:2016-05-15..2022-12-12
+      query: added:2022-12-29..
+
+    - name: low-bitrate.m3u
+      query: bitrate:..128000
+
+    - name: high-bitrate.m3u
+      query: bitrate:220000..

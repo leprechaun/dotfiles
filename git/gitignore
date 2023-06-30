@@ -3,3 +3,6 @@
 tags
 TAGS
 __pycache__
+
+.metals
+.bloop

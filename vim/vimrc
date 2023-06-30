@@ -5,6 +5,15 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+set ttyfast
+set term=xterm-256color
+set background=light
+set clipboard=unnamedplus
+
+if has('termguicolors')
+    set termguicolors
+endif
+
 call plug#begin(data_dir . '/plugins')
     source ~/.dotfiles/vim/plugins/colorschemes.vim
     source ~/.dotfiles/vim/plugins/commentary.vim
@@ -16,6 +25,7 @@ call plug#begin(data_dir . '/plugins')
     source ~/.dotfiles/vim/plugins/editor-config.vim
     source ~/.dotfiles/vim/plugins/vim-test.vim
     source ~/.dotfiles/vim/plugins/surround.vim
+    source ~/.dotfiles/vim/plugins/vim-wiki.vim
 call plug#end()
 
 doautocmd User PlugLoaded
@@ -23,8 +33,6 @@ doautocmd User PlugLoaded
 set directory=~/.vim/tmp//
 
 set hidden
-set ttyfast
-set term=xterm-256color
 
 set expandtab
 set shiftwidth=4

@@ -16,12 +16,10 @@ display_bitrate = "yes"
 progressbar_look = "=>-"
 progressbar_color = "blue"
 progressbar_elapsed_color = "green"
+incremental_seeking = "yes"
 
-
-#playlist_display_mode = "columns"
-#playlist_separate_albums = "yes"
 titles_visibility = "yes" # Column titles
-#song_columns_list_format = "(7f)[blue]{N:#} (40)[white]{t|f} (6f)[blue]{lr} (20)[blue]{a} (20)[blue]{b} (6f)[blue]{y:Year}";
+song_columns_list_format = "(5)[red]{lNE} (5)[red]{NE} (20)[white]{t|f} (20)[blue]{a} (4)[blue]{yEr} (4)[white]{dEr:Disc} (20)[cyan]{b}"
 
 
 #playlist_display_mode = "classic"
@@ -43,3 +41,5 @@ titles_visibility = "yes" # Column titles
 # %C - comment
 # %P - priority
 # $R - begin right alignment
+
+#bind_key "F"

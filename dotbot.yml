@@ -13,6 +13,13 @@
     ~/.ncmpcpp/config:
         path: ncmpcpp/config
         create: true
+    ~/.config/mopidy/mopidy.conf:
+        path: mopidy/mopidy.conf
+        create: true
+    ~/.ssh/config:
+        path: ssh/config
+        create: true
 
 - create:
   - ~/.vim/tmp/
+  - ~/.config/taskwarrior/

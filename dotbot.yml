@@ -19,7 +19,9 @@
     ~/.ssh/config:
         path: ssh/config
         create: true
+    ~/.ssh/config: ssh/config
 
 - create:
   - ~/.vim/tmp/
   - ~/.config/taskwarrior/
+  - ~/.ssh/

@@ -48,3 +48,6 @@
 
 [diff]
     tool = vimdiff
+
+[includeIf "gitdir:~/Workspaces/Personal/**"]
+    path = ~/.dotfiles/git/config.d/personal

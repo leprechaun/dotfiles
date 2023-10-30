@@ -4,7 +4,7 @@ Plug 'antoinemadec/coc-fzf'
 let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-rust-analyzer',
-    \ 'coc-python',
+    \ 'coc-pyright',
     \ 'coc-metals',
     \ 'coc-json',
     \ 'coc-yaml',

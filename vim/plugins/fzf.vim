@@ -13,8 +13,6 @@ let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 command! -bang -nargs=? -complete=dir AllFiles
     \ call fzf#run(fzf#wrap('allfiles', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'source': 'rg --files --hidden --no-ignore' }), <bang>0))
 
-
-
 function! FzfSpellSink(word)
   exe 'normal! "_ciw'.a:word
 endfunction

@@ -4,24 +4,41 @@
 
 - clean: ['~']
 
-- link:
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.vimrc: vim/vimrc
-    ~/.vim/coc-settings.json: vim/coc-settings.json
-    ~/.gitconfig: git/gitconfig
-    ~/.editorconfig: editorconfig/editorconfig.conf
-    ~/.ncmpcpp/config:
-        path: ncmpcpp/config
-        create: true
-    ~/.config/mopidy/mopidy.conf:
-        path: mopidy/mopidy.conf
-        create: true
-    ~/.ssh/config:
-        path: ssh/config
-        create: true
-    ~/.ssh/config: ssh/config
-
 - create:
   - ~/.vim/tmp/
-  - ~/.config/taskwarrior/
   - ~/.ssh/
+
+- link:
+    ~/.config/beets/config.yaml:
+      path: beets/config.yaml
+      create: true
+
+    ~/.vim/vimrc:
+      path: vim/vimrc
+      create: true
+
+    ~/.vim/coc-settings.json:
+      path: vim/coc-settings.json
+      create: true
+
+    ~/.editorconfig: editorconfig/editorconfig.conf
+
+    ~/.config/tmux/tmux.conf:
+      path: tmux/tmux.conf
+      create: true
+
+    ~/.config/git/config:
+      path: git/config
+      create: true
+
+    ~/.config/ncmpcpp/config:
+      path: ncmpcpp/config
+      create: true
+
+    ~/.config/mopidy/mopidy.conf:
+      path: mopidy/mopidy.conf
+      create: true
+
+    ~/.ssh/config:
+      path: ssh/config
+      create: true

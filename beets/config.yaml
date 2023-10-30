@@ -8,7 +8,7 @@ import:
 format_item: "$grouping/$albumtype: $albumartist/$artist - ($original_year - $disc/$disctotal) $album - ($track/$tracktotal) $title ($bitrate)"
 
 directory: ~/Music/beets/
-library: ~/.config/beets/library.db
+library: ~/.local/share/beets/library.db
 chroma:
   auto: no
 

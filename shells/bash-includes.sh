@@ -27,3 +27,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export PROMPT_COMMAND='__git_ps1 "\[\033[38;5;248m\]\w" " \\\$ "'
 
 export PATH=$PATH:~/.local/bin/
+
+if ! command -v fzf &> /dev/null
+then
+  true
+else
+  source /usr/share/doc/fzf/examples/key-bindings.bash
+fi

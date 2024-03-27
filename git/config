@@ -51,3 +51,9 @@
 
 [includeIf "gitdir:~/Workspaces/Personal/**"]
     path = ~/.dotfiles/git/config.d/personal
+
+[includeIf "gitdir:~/Workspaces/TW/**"]
+    path = ~/.dotfiles/git/config.d/tw
+
+[rerere]
+	enabled = true

@@ -12,6 +12,8 @@ library: ~/.local/share/beets/library.db
 chroma:
   auto: no
 
+original_year: yes
+
 types:
   rating: int
 

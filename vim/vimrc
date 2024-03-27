@@ -6,8 +6,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 set ttyfast
-set term=xterm-256color
-set background=light
+set t_ut=
+"set term=xterm-256color
+"set background=light
 set clipboard=unnamedplus
 
 if has('termguicolors')
@@ -25,7 +26,7 @@ call plug#begin(data_dir . '/plugins')
     source ~/.dotfiles/vim/plugins/editor-config.vim
     source ~/.dotfiles/vim/plugins/vim-test.vim
     source ~/.dotfiles/vim/plugins/surround.vim
-    source ~/.dotfiles/vim/plugins/vim-wiki.vim
+    "source ~/.dotfiles/vim/plugins/vim-wiki.vim
 call plug#end()
 
 doautocmd User PlugLoaded

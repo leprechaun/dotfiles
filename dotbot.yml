@@ -42,3 +42,15 @@
     ~/.ssh/config:
       path: ssh/config
       create: true
+
+    ~/.config/sway:
+      path: sway
+      create: true
+
+    ~/.config/waybar:
+      path: waybar
+      create: true
+
+    ~/.config/foot:
+      path: foot
+      create: true

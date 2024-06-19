@@ -1,20 +1,6 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
-
     "layer": "top",
-
     "position": "top",
-
     // If height property would be not present, it'd be calculated dynamically
     "height": 30,
 
@@ -26,23 +12,22 @@
         "sway/window"
     ],
     "modules-right": [
-        // "network",
+        "tray",
+        "network",
         "memory",
         "cpu",
         "temperature",
-        "custom/keyboard-layout",
+        //"custom/keyboard-layout",
+        "bluetooth",
         "battery",
-        "tray",
         "pulseaudio",
         "mpris",
         "clock",
     ],
 
-
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
-
     "battery": {
         "interval": 10,
         "states": {
@@ -65,12 +50,12 @@
 
     "clock": {
         "interval": 1,
-        "format": "{:%Y/%m/%d %H:%M:%S}"
+        "format": "{: %A - %Y/%m/%d %H:%M:%S}"
     },
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": " {usage}% ({load})", // Icon: microchip
         "states": {
           "warning": 70,
           "critical": 90
@@ -98,10 +83,11 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-wifi": "  {essid}", // Icon: wifi
+        "format-ethernet": "", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "tooltip-format-wifi": "{ifname}: {ipaddr} - {signalStrength}%"
     },
 
     "sway/mode": {
@@ -117,16 +103,20 @@
     "sway/workspaces": {
         "all-outputs": false,
         "disable-scroll": true,
-        "format": "{icon} {name}",
+        "format": "{icon}  {name}",
         "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:portal": "", // Icon: terminal
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "F1": "",
+            "F2": "",
+            "F3": "",
+            "F4": "",
             "urgent": "",
             "focused": "",
-            "default": ""
+            "default": "",
+            "persistent": ""
         }
     },
 
@@ -202,5 +192,15 @@
             "paused": "⏸"
         },
         // "ignored-players": ["firefox"]
+    },
+
+    "bluetooth": {
+	    "format": " {status}",
+	    "format-disabled": "", // an empty format will hide the module
+	    "format-connected": " {num_connections}",
+	    "tooltip-format": "{device_alias}",
+	    "tooltip-format-connected": " {device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}",
+      "on-click": "blueman-manager"
     }
 }

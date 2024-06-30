@@ -88,7 +88,10 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+bindsym $mod+Shift+e mode "Sway: Exit?"
+
 #
 # Moving around:
 #
@@ -116,14 +119,14 @@ bindsym $mod+Shift+Right move right
 
 
 
-set $w1_term "1" 
-set $w1_browser "2" 
+set $w1_term "1"
+set $w1_browser "2"
 set $w1_comms "3"
 set $w1_media "4"
 set $w1_other "5"
 
-set $w2_term "F1" 
-set $w2_browser "F2" 
+set $w2_term "F1"
+set $w2_browser "F2"
 set $w2_comms "F3"
 set $w2_media "F4"
 set $w2_other "F5"
@@ -159,7 +162,6 @@ bindsym $mod+Shift+4 move container to workspace $w1_media
 bindsym $mod+Shift+5 move container to workspace $w1_other
 
 
-
 # Right Monitor
 bindsym $mod+F1 workspace $w2_term
 bindsym $mod+F2 workspace $w2_browser
@@ -174,13 +176,10 @@ bindsym $mod+Shift+F4 move container to workspace $w2_media
 bindsym $mod+Shift+F5 move container to workspace $w2_other
 
 
-
-bindsym Print exec grimshot save area ~/Pictures/Screenshots/Screenshot\ from\ "$(date +'%Y-%m-%d %H-%M-%S').png" --notify
-
-# Note: workspaces can have any name you want, not just numbers.
-# We just use 1-10 as the default.
-#
-
+# screenshot
+set $mode_screenshot "Screenshot: Pick | Ouput | Active"
+include ~/.config/sway/config.d/mode-screenshot
+bindsym Print mode $mode_screenshot
 
 
 # Layout stuff:
@@ -221,27 +220,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
-#
-mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
-
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+# see config.d/mode-resize
 bindsym $mod+r mode "resize"
 
 #

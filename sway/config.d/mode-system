@@ -1,0 +1,7 @@
+mode "Sway: Exit?" {
+    bindsym y exec swaymsg exit
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}

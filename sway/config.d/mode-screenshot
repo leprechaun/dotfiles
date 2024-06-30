@@ -1,0 +1,16 @@
+set $grimshot /usr/bin/grimshot
+set $screenshot_location ~/Pictures/Screenshots/Screenshot\ from\ "$(date +'%Y-%m-%d %H-%M-%S').png"
+
+set $screenshot_output $grimshot save output $screenshot_location
+set $screenshot_window $grimshot save window $screenshot_location
+set $screenshot_active $grimshot save active $screenshot_location
+set $screenshot_select $grimshot save area $screenshot_location
+
+mode $mode_screenshot {
+    bindsym o mode "default", exec $screenshot_output
+    bindsym p mode "default", exec $screenshot_select
+    bindsym a mode "default", exec $screenshot_active
+    bindsym w mode "default", exec $screenshot_window
+
+    bindsym Escape mode "default"
+}

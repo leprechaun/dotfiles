@@ -1,0 +1,4 @@
+augroup sway_ft
+  au!
+  autocmd BufNewFile,BufRead sway/config,sway/config.d/*   set syntax=swayconfig
+augroup END

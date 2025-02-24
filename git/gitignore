@@ -6,3 +6,6 @@ __pycache__
 
 .metals
 .bloop
+.terraform
+terraform.tfstate.*.backup
+terraform.tfstate.backup

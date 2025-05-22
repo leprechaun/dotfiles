@@ -4,7 +4,7 @@
 # Terminal stuffs
 export TERM=xterm-256color
 export EDITOR=vim
-export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:~/.local/bin/:/opt/nvim/bin/
 export BASH_COMPLETION_USER_DIR=~/.local/share/bash-completion/completions/
 
 export HUSKY_SKIP_HOOKS="true"

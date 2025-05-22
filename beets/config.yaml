@@ -1,11 +1,11 @@
-plugins: bpd ftintitle duplicates missing fetchart importadded info types edit smartplaylist fuzzy scrub inline
+plugins: bpd ftintitle duplicates missing fetchart importadded info types edit smartplaylist fuzzy scrub inline unimported
 import:
-  move: yes
+  #move: yes
   write: yes
   set_fields:
     grouping: uncategorised
 
-format_item: "$grouping/$albumtype: $albumartist/$artist - ($original_year - $disc/$disctotal) $album - ($track/$tracktotal) $title ($bitrate)"
+format_item: "$added: $grouping/$albumtype: $albumartist/$artist - ($original_year - $disc/$disctotal) $album - ($track/$tracktotal) $title ($bitrate)"
 
 directory: ~/Music/beets/
 library: ~/.local/share/beets/library.db
@@ -20,6 +20,9 @@ types:
 paths:
   default: "$grouping/$albumartist/$album%aunique{}/$track $title"
   comp: "$grouping/Compilations/$album%aunique{}/$track $title"
+
+unimported:
+  ignore_extensions: jpg png
 
 smartplaylist:
   relative_to: /home/leprechaun/Music/

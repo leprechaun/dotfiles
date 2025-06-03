@@ -22,6 +22,7 @@ for filename in ${parent_path}/application-includes/*.sh; do
   if command -v $COMMAND &> /dev/null; then
     source $filename
   else
-    echo -- we dont have $COMMAND ?
+    #echo -- we dont have $COMMAND ?
+    true
   fi
 done

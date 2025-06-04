@@ -62,3 +62,7 @@
     ~/.config/foot:
       path: foot
       create: true
+
+    ~/.config/duplicity/files-excluded-from-backup:
+      path: duplicity/files-excluded-from-backup
+      create: true

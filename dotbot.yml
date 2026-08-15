@@ -13,12 +13,8 @@
       path: beets/config.yaml
       create: true
 
-    ~/.local/share/nvim/site:
-      path: ~/.vim
-      create: true
-
-    ~/.config/nvim/init.vim:
-      path: vim/vimrc
+    ~/.config/nvim:
+      path: nvim
       create: true
 
     ~/.vim/vimrc:

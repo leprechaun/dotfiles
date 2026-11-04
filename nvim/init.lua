@@ -8,6 +8,7 @@ vim.o.mouse = "a"
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.winborder = "rounded"
 vim.opt_local.conceallevel = 2
+vim.o.cursorline = true -- highlight the current line
 
 vim.o.swapfile = false
 vim.o.undofile = true -- persistent undo, since swapfile is off
@@ -53,7 +54,7 @@ vim.g.netrw_altv = 1 -- vertical splits open to the right
 vim.keymap.set("n", "<leader>b", ":Lexplore<CR>", { silent = true, desc = "File explorer" })
 
 -- LSP
-vim.lsp.enable({ "lua_ls", "pyright", "beancount" })
+vim.lsp.enable({ "lua_ls", "pyright", "beancount", "terraformls" })
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format buffer" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostics to loclist" })
@@ -76,6 +77,8 @@ require("mini.pick").setup()
 vim.keymap.set("n", "<leader>ff", ":Pick files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>fg", ":Pick grep_live<CR>", { desc = "Live grep" })
 vim.keymap.set("n", "<leader>fb", ":Pick buffers<CR>", { desc = "Find buffers" })
+
+vim.keymap.set("n", "<leader>o", ":Obsidian<CR>", { desc = "Obsidian" })
 
 -- Treesitter (highlighting only; `vim.treesitter.start()` is what actually turns it on per buffer)
 local ts_langs = { "lua", "python", "vim", "vimdoc", "query" }
